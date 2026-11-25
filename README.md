@@ -1,15 +1,34 @@
 # Filesystem-SysV
 
-Independent System V, Xenix and Coherent filesystem family provider for InfiltratorOS. Target: one native C/C++ engine and one distributable `SYSV.so`.
+## 1. Purpose and format scope
 
-**Status: documentation only; source extraction pending.** [Central source](https://github.com/Infiltrator-Projects/Filesystems/tree/101026021d9088d80b7f0f472d9061f0e2c688a3/native/filesystems/sysv). Editable Linux v6.12.107-derived source remains centrally. No independent driver or release exists.
+System V and related historical Unix filesystem variants. This repository is the designated independent implementation home for InfiltratorOS. **Documentation and migration scaffold only: no independent runtime provider or release is present.**
 
-## Common V2
+## 2. On-disk architecture and invariants
 
-Use only `infiltrator_filesystem_api_v2` from [Libraries](https://github.com/Infiltrator-Projects/Libraries). Own explicit variant identification, superblocks, byte order, inode and block trees, free lists and directory records in the same engine for hosted and freestanding execution. No FUSE, separate per-format kernel/EFI driver or legacy ABI.
+Explicit variant identification and byte order govern superblocks, inode and block trees, free lists and directory records. Geometry or magic shared by several historical variants is insufficient to select a decoder safely. These are design requirements for the native implementation, not claims about code already present in this repository.
 
-## Build and install
+## 3. Common V2 implementation and capabilities
 
-Planned: `/System/Filesystems/SYSV.so` and `/System/Resources/Documentation/Filesystem-SysV.pdf`. Generic amd64 .deb, source-downloading CPU-native .run and GitHub-generated source ZIP only. No build or installer exists yet.
+No local Common V2 implementation or advertised operation set has yet been qualified. The target entry point is `infiltrator_filesystem_api_v2`, using bounded, partition-relative host I/O. Implement native probe first, then mount, stat, enumeration, read and volume query where applicable. Consumers must negotiate supported groups and profiles; an unsupported operation must not report success or delegate to a private driver.
 
-See [migration status](MIGRATION_STATUS.md) and [engineering philosophy](docs/PHILOSOPHY.md).
+## 4. Integrity, mutation, allocation and recovery
+
+Mutation, formatting, check/repair and DEFRAG map/plan/execute/verify/recover require format-specific allocation and ordering invariants, exclusive writable host access and demonstrated interruption recovery. Until qualified, reject them before writing. Preserve native disk semantics and do not add a kernel or FUSE fallback as an alternative filesystem authority.
+
+## 5. Build, installation and release
+
+The target installation is `/System/Filesystems/SYSV.so` and `/System/Resources/Documentation/Filesystem-SysV.pdf`. Neither file is currently distributed by this repository. Once the implementation qualifies, the intended release is a portable amd64 DEB and CPU-native source-first RUN, with GitHub's automatic source archive. No install or build command is advertised before an executable build exists.
+
+## 6. Qualification and limitations
+
+Independent images for every admitted variant, ambiguous geometry, corrupt free lists and malformed directory records. Compare independent payloads and unchanged-image hashes; inject truncation, corruption and I/O faults. Establish exact-revision ABI, hosted and import-free freestanding qualification, then independently test BOOT and kernel integration. No local build, runtime or packaging qualification is claimed.
+
+## 7. Technical references and provenance
+
+- [Pinned central source baseline](https://github.com/Infiltrator-Projects/Filesystems/tree/101026021d9088d80b7f0f472d9061f0e2c688a3/native/filesystems/sysv)
+- [Migration and qualification plan](MIGRATION_STATUS.md)
+- [Project philosophy](docs/PHILOSOPHY.md)
+- [Common ABI](https://github.com/Infiltrator-Projects/Libraries)
+
+Preserve inherited notices and licences on source extraction; new project-authored code uses GPL-3.0-or-later. The historical original-format reference and installed PDF manual remain pending. Central code or test results are not evidence of an independent provider.
