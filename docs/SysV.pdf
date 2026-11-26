@@ -3,7 +3,7 @@
 << /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R] /Count 4 >>
+<< /Type /Pages /Kids [6 0 R 8 0 R 10 0 R 12 0 R 14 0 R 16 0 R 18 0 R 20 0 R 22 0 R 24 0 R 26 0 R 28 0 R 30 0 R 32 0 R 34 0 R 36 0 R 38 0 R 40 0 R 42 0 R 44 0 R 46 0 R 48 0 R 50 0 R 52 0 R 54 0 R 56 0 R 58 0 R 60 0 R] /Count 28 >>
 endobj
 3 0 obj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
@@ -18,6 +18,606 @@ endobj
 << /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
 endobj
 7 0 obj
+<< /Length 1075 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Historical family and variant boundaries) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The System V filesystem descends from early Unix inode-based file storage.) Tj
+T* (The related Xenix, System V Release 2, System V Release 4, Coherent and) Tj
+T* (Seventh Edition layouts share important ideas but differ in superblock) Tj
+T* (placement, field alignment, byte order and allocator details. Treat each as a) Tj
+T* (specific profile, not a single interchangeable encoding. Root inode is 2 and) Tj
+T* (inode 1 is traditionally associated with bad blocks. Inode zero means no) Tj
+T* (object. Filesystem zones are allocation units and must be distinguished from) Tj
+T* (host sectors and device I/O buffers.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 1 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1106 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Volume identification and placement) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The typical layout is a reserved boot region, superblock, contiguous inode) Tj
+T* (table and data area. Xenix commonly places its 1024-byte superblock at volume) Tj
+T* (byte 1024, while System V and Coherent commonly place the 512-byte superblock) Tj
+T* (at byte 512. Some System V Release 2 images reserve a whole leading track;) Tj
+T* (zone addresses then need the corresponding profile-specific offset. System V) Tj
+T* (supports profiles with 512, 1024 and 2048-byte zones. Coherent normally uses) Tj
+T* (512. Never identify a variant solely by a guessed block size; confirm) Tj
+T* (superblock structure, root inode and plausible filesystem bounds.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 2 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 1162 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Byte order and profile selection) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(System V and Xenix on-disk numeric encoding depends on their platform) Tj
+T* (lineage; the commonly encountered x86 profile is little-endian. Coherent uses) Tj
+T* (little-endian 16-bit words but a 32-bit PDP-style ordering: the higher 16-bit) Tj
+T* (word precedes the lower 16-bit word. Packed 24-bit inode zone addresses) Tj
+T* (require separate decoding rules and must not be read as host integers.) Tj
+T* (Coherent lacks a reliable magic constant; use cross-validated geometry,) Tj
+T* (expected field layout and root directory evidence. Reject ambiguous profiles) Tj
+T* (for writes. V7 also needs independent identification and does not become) Tj
+T* (System V merely because its inode record looks similar.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 3 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 1104 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (System V Release 4 superblock) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(Relative offsets in the four-byte-aligned 512-byte layout: first data zone at) Tj
+T* (0 \(16 bits\), total zones at 4, free-stack count at 8 \(16 bits\), fifty 32-bit) Tj
+T* (free-zone entries beginning at 12. Free-inode cache count at 212, one hundred) Tj
+T* (16-bit inode entries from 216, state bytes from 416, update time at 420,) Tj
+T* (device information from 424, free-zone total at 432, free-inode total at 436,) Tj
+T* (volume and pack names at 440 and 446. State at 500, magic at 504, zone-size) Tj
+T* (type at 508. The clean-state relation uses 0x7C269D38 minus the update time.) Tj
+T* (Apply the relation only to the verified Release 4 profile.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 4 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 15 0 R >>
+endobj
+15 0 obj
+<< /Length 1151 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Release 2, Xenix and Coherent differences) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(Release 2 uses two-byte alignment: first data zone at 0, total zones at 2,) Tj
+T* (free-zone count at 6, fifty free-zone entries from 8, inode cache count at) Tj
+T* (208, cache at 210, status bytes from 410 and update time at 414. Free totals) Tj
+T* (at 426/430; volume and pack names at 432/438; state, magic and type occupy) Tj
+T* (the same final offsets 500/504/508. Its documented clean state is 0xCB096F43.) Tj
+T* (Xenix uses a 100-entry free stack and 100-inode cache within a larger) Tj
+T* (superblock; the clean byte is 0x46. Coherent uses 64 free-stack entries and) Tj
+T* (100 inode-cache entries plus interleave parameters. Do not apply Release 4) Tj
+T* (offsets to these layouts.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 5 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 17 0 R >>
+endobj
+17 0 obj
+<< /Length 1154 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Inode table and record inventory) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The inode table is addressed according to the selected profile's inode-table) Tj
+T* (start. Each 64-byte inode contains 16-bit mode at 0, links at 2, UID at 4,) Tj
+T* (GID at 6, 32-bit file length at 8, thirteen three-byte zone addresses at 12) Tj
+T* (through 50, generation byte at 51, and 32-bit access, modification and) Tj
+T* (inode-change timestamps at 52, 56 and 60. To locate inode n, add 64 times) Tj
+T* (\(n-1\) to the table's starting byte. Validate against the first data zone and) Tj
+T* (maximum available inode slots. Device-special inodes can interpret the) Tj
+T* (mapping field differently from ordinary files. A nonzero link count alone) Tj
+T* (does not validate a mode or data mapping.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 6 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+18 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 19 0 R >>
+endobj
+19 0 obj
+<< /Length 1188 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Direct and indirect block mapping) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(There are ten direct addresses followed by single, double and triple indirect) Tj
+T* (roots. Indirect blocks store 32-bit entries, so a 1024-byte zone contains 256) Tj
+T* (pointers. Logical zones 0 through 9 are direct, 10 through 265 are singly) Tj
+T* (indirect, 266 through 65801 are doubly indirect, and the following range is) Tj
+T* (triply indirect. For a doubly indirect logical zone 500, subtract 266 to) Tj
+T* (obtain 234; select entry 0 in the outer block and entry 234 in the inner) Tj
+T* (block. Convert the final physical zone to bytes using the selected profile.) Tj
+T* (Treat zero addresses as absent mappings where the format permits holes; bound) Tj
+T* (traversal against file length, address width and volume geometry.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 7 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+20 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 21 0 R >>
+endobj
+21 0 obj
+<< /Length 1179 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Directories and link semantics) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The ordinary directory record is 16 bytes: a 16-bit inode number followed by) Tj
+T* (fourteen filename bytes, with shorter names padded by zeros. Do not require a) Tj
+T* (terminator when a full-width name uses all fourteen bytes. Unused slots carry) Tj
+T* (inode zero. Traverse directory data through the same mapping machinery as) Tj
+T* (other files, enforcing record alignment and inode bounds. Dot and dot-dot) Tj
+T* (establish local and parent references. Hard links share inode identity;) Tj
+T* (removing a directory name decrements its link count and reclaims storage only) Tj
+T* (after the final valid reference and any host open-handle semantics are) Tj
+T* (resolved. Historical symbolic-link conventions vary by profile.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 8 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+22 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 23 0 R >>
+endobj
+23 0 obj
+<< /Length 1251 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Free-zone stack algorithm) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The superblock contains a cache of free-zone addresses. This is not a bitmap) Tj
+T* (and not a linked list with a pointer in every free zone. When allocation pops) Tj
+T* (the last address in a chunk, that zone carries the next chunk of free) Tj
+T* (addresses. Decode its count and entries according to the selected layout,) Tj
+T* (load the next cache, then allocate the popped zone. Freeing into a full cache) Tj
+T* (writes the existing chunk into the newly freed zone and resets the cache to) Tj
+T* (point to it. Some profiles use a zero sentinel; Coherent uses a zeroed) Tj
+T* (terminating chunk. Validate every count and address, detect repeated zones) Tj
+T* (and cycles, and update total counters without underflow. Free inodes are) Tj
+T* (cached separately and replenished by scanning the inode table.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 9 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+24 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 25 0 R >>
+endobj
+25 0 obj
+<< /Length 1247 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Writes and crash consistency) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The classic layouts do not provide a general metadata journal. Creating a) Tj
+T* (file requires an allocated inode and directory slot; extension may allocate) Tj
+T* (indirect metadata and payload zones. Never publish uninitialised pointer) Tj
+T* (blocks or return a referenced zone to the free stack. Truncate must release) Tj
+T* (indirect subtrees safely after removing references. Dirty/clean state and) Tj
+T* (superblock update ordering differ among profiles. Preserve reserved and) Tj
+T* (interleave metadata. A relocation changes the owning direct or indirect) Tj
+T* (pointer after copying and verifying data; reinsert the old zone into the) Tj
+T* (free-list structure only after publication is safe. Validate failure ordering) Tj
+T* (and native repair compatibility before writes are allowed.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 10 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+26 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 27 0 R >>
+endobj
+27 0 obj
+<< /Length 1212 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Independent consistency checking) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(Reconstruct every live inode's zone ownership, including indirect nodes and) Tj
+T* (metadata, and compare it with the complete free-stack traversal. Detect) Tj
+T* (invalid addresses, duplicate claims, zones absent from both sets, cycles in) Tj
+T* (free chunks, inode-cache duplication and mismatched link counts. Distinguish) Tj
+T* (bad-block reservations from leaks. Verify root and parent relationships and) Tj
+T* (count all reachable inode references. Test each profile independently with) Tj
+T* (zero-filled sparse data, full fourteen-byte names, direct-to-indirect) Tj
+T* (boundaries, empty and full free stacks, mixed-endian fields and deliberately) Tj
+T* (damaged superblocks. Do not repair ambiguities by assuming a different System) Tj
+T* (V profile.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 11 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+28 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 29 0 R >>
+endobj
+29 0 obj
+<< /Length 1211 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Sources and qualification boundary) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(Independent technical documentation:) Tj
+T* (https://docs.kernel.org/6.8/filesystems/sysv-fs.html . Field-layout and) Tj
+T* (algorithm references: https://github.com/torvalds/linux/tree/v6.12/fs/sysv) Tj
+T* (and include/linux/sysv_fs.h. Seek original Xenix, AT&T and Coherent) Tj
+T* (formatter/checker media for fixture validation. The historic Linux) Tj
+T* (implementation is a useful interoperability oracle but is not a complete) Tj
+T* (specification of every Unix-derived variant. Exact per-variant) Tj
+T* (identification, address packing, free-list chunk alignment and clean-state) Tj
+T* (handling require tests against independent images. Historical implementation) Tj
+T* (documents are appended unchanged; they do not establish a qualified provider.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 12 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+30 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 31 0 R >>
+endobj
+31 0 obj
+<< /Length 603 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.01 0.52 0.56 rg 50 747 116 5 re f
+1 1 1 rg BT /F2 11 Tf 50 807 Td (INFILTRATOR / FILESYSTEM ENGINEERING REFERENCE) Tj ET
+BT /F2 21 Tf 50 775 Td (SysV - technical reference) Tj ET
+0.05 0.13 0.22 rg BT /F2 16 Tf 50 715 Td (Historical reference appendices) Tj ET
+BT /F1 11 Tf 15 TL 50 685 Td
+(The following pages preserve both previous documents. Their dated) Tj
+T* (implementation statements are historical evidence, not a qualification claim.) Tj
+ET
+0.05 0.13 0.22 rg BT /F1 9 Tf 50 42 Td (Engineering chapter 13 | Original format, not provider qualification) Tj ET
+endstream
+endobj
+32 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 33 0 R >>
+endobj
+33 0 obj
+<< /Length 1807 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 01) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (HISTORY / ORIGINAL DESIGN / DISK FORMAT) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Historical System V-derived filesystem family; explicitly recognise supported) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (Xenix, System V and Coherent variants. This is a design contract, not a claim) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (of implemented capabilities.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 614 Tm (Native provider design and original-format reference. No independent runtime) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 598 Tm (provider has yet been qualified.) Tj ET
+BT /F2 11 Tf 0.02 0.50 0.55 rg 1 0 0 1 50 568 Tm (CONCEPTUAL MEDIA MAP - NOT A SECTOR MAP) Tj ET
+0.05 0.36 0.47 rg 50 491 238 62 re f
+BT /F2 11 Tf 1 1 1 rg 1 0 0 1 62 517 Tm (Variant superblock) Tj ET
+0.05 0.36 0.47 rg 301 491 238 62 re f
+BT /F2 11 Tf 1 1 1 rg 1 0 0 1 313 517 Tm (Free block / inode lists) Tj ET
+0.05 0.36 0.47 rg 50 415 238 62 re f
+BT /F2 11 Tf 1 1 1 rg 1 0 0 1 62 441 Tm (Inode pointers) Tj ET
+0.05 0.36 0.47 rg 301 415 238 62 re f
+BT /F2 11 Tf 1 1 1 rg 1 0 0 1 313 441 Tm (Data and directories) Tj ET
+BT /F2 10 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 388 Tm (History / architecture / allocation / integrity / implementation / tests) Tj ET
+endstream
+endobj
+34 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 35 0 R >>
+endobj
+35 0 obj
+<< /Length 1378 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 02) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (HISTORICAL CHRONOLOGY) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Historical Unix disk formats include Xenix, System V and Coherent variants.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (Their related inode and free-list designs do not make their geometry, byte) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (order or superblock interpretations interchangeable.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 614 Tm (The historic format and the InfiltratorOS implementation are distinct. An) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 598 Tm (external driver or archival utility is evidence, not a qualified production) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 582 Tm (provider.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 552 Tm (https://github.com/torvalds/linux/tree/v6.12/fs/sysv) Tj ET
+endstream
+endobj
+36 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 37 0 R >>
+endobj
+37 0 obj
+<< /Length 1081 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 03) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (ORIGINAL ON-DISK ARCHITECTURE) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Variant-specific superblocks, byte order and block size, inode tables,) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (direct/indirect mappings, free-block/free-inode structures and directory) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (records. The single native C/C++ engine owns these format semantics;) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (consumers provide bounded Common V2 host services, never competing parsers.) Tj ET
+endstream
+endobj
+38 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 39 0 R >>
+endobj
+39 0 obj
+<< /Length 1350 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 04) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (ALLOCATION, INTEGRITY AND RECOVERY) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Ambiguous variants must not be guessed for writable access. Validate) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (geometry, free-list termination, duplicate allocation, inode references and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (directory record sizes; preserve variant-specific ordering and semantics. All) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (arithmetic, offsets and lengths are checked before I/O. Writable operations) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 612 Tm (require exclusive access, explicit ordering, flush and interruption/recovery) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 596 Tm (evidence. Read-only operations leave the medium unchanged.) Tj ET
+endstream
+endobj
+40 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 41 0 R >>
+endobj
+41 0 obj
+<< /Length 1680 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 05) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (DISK READ PATH / SOURCE EVIDENCE) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Original editable source) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (\(https://github.com/Infiltrator-Projects/Filesystems/blob/101026021d9088d80b7) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (f0f472d9061f0e2c688a3/native/filesystems/sysv/linux/sysv.h\) \(blob) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (0a48b2e7ed...\). The imported header identifies Xenix, SysV4, SysV2 and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 612 Tm (Coherent as separate host interpretations. Its SYSV_MAGIC_BASE-derived VFS) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 596 Tm (magic values are not disk signatures; use the actual variant detection and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 580 Tm (byte-order logic in linux/super.c. Validate variant-specific superblock and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 564 Tm (inode layouts, free-list accounting and indirect block arithmetic.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 548 Tm (Unambiguous selection is mandatory before any write.) Tj ET
+endstream
+endobj
+42 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 43 0 R >>
+endobj
+43 0 obj
+<< /Length 1573 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 06) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (COMMON V2 IMPLEMENTATION BOUNDARY) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Only infiltrator_filesystem_api_v2 is public. Target the genuine) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (PROBE/MOUNT/UNMOUNT/STAT/LIST/READ operations first; negotiate actual) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (supported operation masks. VOLUME, METADATA and DEFRAG operations \(including) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (MAP, PLAN, EXECUTE, VERIFY, RECOVER\) are individually qualified or refused.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 612 Tm (Test Media uses the same provider's qualified format and namespace) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 596 Tm (operations. No FUSE, legacy ABI, private driver or kernel proxy. Hosted and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 580 Tm (import-free freestanding profiles share the format engine, with generic) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 564 Tm (environment-specific host services.) Tj ET
+endstream
+endobj
+44 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 45 0 R >>
+endobj
+45 0 obj
+<< /Length 1870 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 07) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (ENGINEERING ACCEPTANCE / HOST I/O) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (- A valid CORE descriptor with a real PROBE is mandatory. Every optional) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (operation has its own capability bit and non-null qualified callback;) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (unavailable operations have neither. Recognised format, unsupported feature,) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (corruption, host I/O failure and stale handles remain distinct outcomes.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 598 Tm (- Use Common's sector-aligned bounded byte helpers. Validate partition) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 582 Tm (extent, logical/physical sector geometry and maximum transfer before reading.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 566 Tm (Serialize overlapping read/modify/write sectors; request explicit flush) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 550 Tm (barriers. Never infer exclusivity from flags alone; require real exclusive) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 534 Tm (unmounted ownership before formatting or raw mutation. Require the Common) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 518 Tm (entropy service when the format needs a unique identity.) Tj ET
+endstream
+endobj
+46 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 47 0 R >>
+endobj
+47 0 obj
+<< /Length 2004 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 08) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (CONSUMERS / RELOCATION / TEST MEDIA) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (- Qualify hosted and import-free freestanding profiles separately; enforce) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (module identity and trust, exact export set and actual packaged bytes. BOOT) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (and kernel are generic loaders; BOOT uses the same file in) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (/EFI/InfiltratorOS/BOOT/drivers_x64/, with the installed canonical copy in) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 612 Tm (/System/Filesystems/. No per-format .ko/.efi, FUSE, proxy, legacy ABI,) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 596 Tm (external formatter or consumer-side parsing substitutes for the engine.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 566 Tm (- Test Media must format and populate through actual V2 FORMAT/CREATE/WRITE) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 550 Tm (operations; an independent formatter/reader may be a test oracle only, never) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 534 Tm (production fallback. Defragmentation maps, plans, execution, verification and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 518 Tm (recovery require independent proof of ownership, data preservation and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 502 Tm (interruption safety. Where not implemented they remain absent.) Tj ET
+endstream
+endobj
+48 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 49 0 R >>
+endobj
+49 0 obj
+<< /Length 1366 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 09) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (VALIDATION, RECOVERY AND COMPATIBILITY) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (Use independently produced images per admitted variant, byte order and block) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (size. Test ambiguous superblocks, indirect trees, free-list loops and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (malformed directory entries. Compare file bytes against an independent) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (oracle, hash unchanged read-only images, inject short I/O, corruption and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 612 Tm (interruption; validate exact published module separately in BOOT and kernel.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 596 Tm (Use disposable media only. No new independent binary or test pass is claimed.) Tj ET
+endstream
+endobj
+50 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 51 0 R >>
+endobj
+51 0 obj
+<< /Length 2201 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 10) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (BUILD, INSTALLATION AND RELEASE) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (The target installation is /System/Filesystems/SYSV.so and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 660 Tm (/System/Resources/Documentation/Filesystem-SysV.pdf. Neither file is) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 644 Tm (currently distributed by this repository. Once the implementation qualifies,) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 628 Tm (the intended release is a portable amd64 DEB and CPU-native source-first RUN,) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 612 Tm (with GitHub's automatic source archive. No install or build command is) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 596 Tm (advertised before an executable build exists.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 566 Tm (- New build and implementation code is native C/C++ and shell as appropriate,) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 550 Tm (no Python. The generic amd64 DEB and CPU-native source-downloading RUN are) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 534 Tm (the only manually published release assets; GitHub generates source archives.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 518 Tm (RUN fetches exact versioned source and pinned Common dependency, verifies) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 502 Tm (integrity, compiles natively and installs the selected package; no source) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 486 Tm (archive or DEB embedded. Release immutable exact-main qualification only. No) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 470 Tm (release exists yet.) Tj ET
+endstream
+endobj
+52 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 53 0 R >>
+endobj
+53 0 obj
+<< /Length 2369 >>
+stream
+0.05 0.13 0.22 rg 0 749 595 93 re f
+0.04 0.54 0.60 rg 50 747 115 4 re f
+0.78 0.82 0.86 RG 0.6 w 50 50 m 545 50 l S
+BT /F2 9 Tf 0.62 0.86 0.90 rg 1 0 0 1 50 801 Tm (INFILTRATOR / ORIGINAL FILESYSTEM HISTORY AND DESIGN) Tj ET
+BT /F2 19 Tf 1 1 1 rg 1 0 0 1 50 771 Tm (System V and related Unix filesystems) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 34 Tm (Filesystem-SysV / engineering reference) Tj ET
+BT /F1 8 Tf 0.07 0.16 0.23 rg 1 0 0 1 512 34 Tm (PAGE 11) Tj ET
+BT /F2 14 Tf 0.02 0.45 0.50 rg 1 0 0 1 50 711 Tm (PRIMARY SOURCES AND IMPLEMENTATION STATUS) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 676 Tm (https://github.com/torvalds/linux/tree/v6.12/fs/sysv) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 646 Tm () Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 630 Tm (https://github.com/Infiltrator-Projects/Filesystems/tree/101026021d9088d80b7f) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 614 Tm (0f472d9061f0e2c688a3/native/filesystems/sysv) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 584 Tm () Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 568 Tm (https://github.com/Infiltrator-Projects/Libraries/blob/main/docs/FILESYSTEM_C) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 552 Tm (OMMON_ABI_V2.md) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 522 Tm (Independent images for every admitted variant, ambiguous geometry, corrupt) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 506 Tm (free lists and malformed directory records. Compare independent payloads and) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 490 Tm (unchanged-image hashes; inject truncation, corruption and I/O faults.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 474 Tm (Establish exact-revision ABI, hosted and import-free freestanding) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 458 Tm (qualification, then independently test BOOT and kernel integration. No local) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 442 Tm (build, runtime or packaging qualification is claimed.) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 412 Tm (Source extraction, implementation and release qualification remain) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 396 Tm (outstanding. This is a source-backed engineering reference, not a complete) Tj ET
+BT /F1 10.2 Tf 0.07 0.16 0.23 rg 1 0 0 1 50 380 Tm (original specification.) Tj ET
+endstream
+endobj
+54 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 55 0 R >>
+endobj
+55 0 obj
 << /Length 2633 >>
 stream
 0.05 0.13 0.22 rg 0 750 595 92 re f
@@ -54,10 +654,10 @@ BT /F2 9 Tf 0.08 0.16 0.23 rg 1 0 0 1 313 380 Tm (Native engine) Tj ET
 BT /F2 9 Tf 0.08 0.16 0.23 rg 1 0 0 1 441 380 Tm (Common V2) Tj ET
 endstream
 endobj
-8 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+56 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 57 0 R >>
 endobj
-9 0 obj
+57 0 obj
 << /Length 1962 >>
 stream
 0.05 0.13 0.22 rg 0 750 595 92 re f
@@ -81,10 +681,10 @@ BT /F1 10.5 Tf 0.08 0.16 0.23 rg 1 0 0 1 50 509 Tm (Mutation requires the owners
 BT /F1 10.5 Tf 0.08 0.16 0.23 rg 1 0 0 1 50 493 Tm (operations must leave the source image unchanged.) Tj ET
 endstream
 endobj
-10 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+58 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 59 0 R >>
 endobj
-11 0 obj
+59 0 obj
 << /Length 2447 >>
 stream
 0.05 0.13 0.22 rg 0 750 595 92 re f
@@ -112,10 +712,10 @@ BT /F1 10.5 Tf 0.08 0.16 0.23 rg 1 0 0 1 50 445 Tm (separately in BOOT and kerne
 BT /F1 10.5 Tf 0.08 0.16 0.23 rg 1 0 0 1 50 429 Tm (or test pass is claimed.) Tj ET
 endstream
 endobj
-12 0 obj
-<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+60 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 61 0 R >>
 endobj
-13 0 obj
+61 0 obj
 << /Length 4548 >>
 stream
 0.05 0.13 0.22 rg 0 750 595 92 re f
@@ -158,23 +758,71 @@ BT /F1 10.5 Tf 0.08 0.16 0.23 rg 1 0 0 1 50 205 Tm (is inferred from this refere
 endstream
 endobj
 xref
-0 14
+0 62
 0000000000 65535 f 
 0000000009 00000 n 
 0000000058 00000 n 
-0000000135 00000 n 
-0000000205 00000 n 
-0000000280 00000 n 
-0000000348 00000 n 
-0000000494 00000 n 
-0000003178 00000 n 
-0000003324 00000 n 
-0000005337 00000 n 
-0000005485 00000 n 
-0000007984 00000 n 
-0000008132 00000 n 
+0000000304 00000 n 
+0000000374 00000 n 
+0000000449 00000 n 
+0000000517 00000 n 
+0000000663 00000 n 
+0000001789 00000 n 
+0000001935 00000 n 
+0000003092 00000 n 
+0000003240 00000 n 
+0000004454 00000 n 
+0000004602 00000 n 
+0000005758 00000 n 
+0000005906 00000 n 
+0000007109 00000 n 
+0000007257 00000 n 
+0000008463 00000 n 
+0000008611 00000 n 
+0000009851 00000 n 
+0000009999 00000 n 
+0000011230 00000 n 
+0000011378 00000 n 
+0000012681 00000 n 
+0000012829 00000 n 
+0000014128 00000 n 
+0000014276 00000 n 
+0000015540 00000 n 
+0000015688 00000 n 
+0000016951 00000 n 
+0000017099 00000 n 
+0000017753 00000 n 
+0000017901 00000 n 
+0000019760 00000 n 
+0000019908 00000 n 
+0000021338 00000 n 
+0000021486 00000 n 
+0000022619 00000 n 
+0000022767 00000 n 
+0000024169 00000 n 
+0000024317 00000 n 
+0000026049 00000 n 
+0000026197 00000 n 
+0000027822 00000 n 
+0000027970 00000 n 
+0000029892 00000 n 
+0000030040 00000 n 
+0000032096 00000 n 
+0000032244 00000 n 
+0000033662 00000 n 
+0000033810 00000 n 
+0000036063 00000 n 
+0000036211 00000 n 
+0000038632 00000 n 
+0000038780 00000 n 
+0000041465 00000 n 
+0000041613 00000 n 
+0000043627 00000 n 
+0000043775 00000 n 
+0000046274 00000 n 
+0000046422 00000 n 
 trailer
-<< /Size 14 /Root 1 0 R >>
+<< /Size 62 /Root 1 0 R >>
 startxref
-12732
+51022
 %%EOF
