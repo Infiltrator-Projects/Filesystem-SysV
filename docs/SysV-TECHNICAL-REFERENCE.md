@@ -52,8 +52,6 @@ The independent provider uses Common V2: https://github.com/Infiltrator-Projects
 
 ## Sources and qualification boundary
 
-Independent technical documentation: https://docs.kernel.org/6.8/filesystems/sysv-fs.html . Field-layout and algorithm references: https://github.com/torvalds/linux/tree/v6.12/fs/sysv and include/linux/sysv_fs.h. Seek original Xenix, AT&T and Coherent formatter/checker media for fixture validation. The historic Linux implementation is a useful interoperability oracle but is not a complete specification of every Unix-derived variant. Exact per-variant identification, address packing, free-list chunk alignment and clean-state handling require tests against independent images. Original implementation evidence does not establish a qualified provider.
-
-Test free-list loops, ambiguous superblocks and indirect arithmetic for every admitted profile.
+Independent technical documentation: https://docs.kernel.org/6.8/filesystems/sysv-fs.html . Field-layout and algorithm references: https://github.com/torvalds/linux/tree/v6.12/fs/sysv and include/linux/sysv_fs.h. Seek original Xenix, AT&T and Coherent formatter/checker media for fixture validation. The historic Linux implementation is a useful interoperability oracle but is not a complete specification of every Unix-derived variant. Test each admitted profile against independent images for variant identification (including ambiguous superblocks), address packing and indirect arithmetic, free-list chunk alignment and loops, and clean-state handling. Original implementation evidence does not establish a qualified provider.
 
 Retained source: https://github.com/Infiltrator-Projects/Filesystems/blob/101026021d9088d80b7f0f472d9061f0e2c688a3/native/filesystems/sysv/linux/sysv.h (blob 0a48b2e7ed).
