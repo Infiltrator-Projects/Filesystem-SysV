@@ -2,15 +2,15 @@
 
 ## 1. Purpose and format scope
 
-System V and related historical Unix filesystem variants. This repository is the designated independent implementation home for InfiltratorOS. **Documentation and migration scaffold only: no independent runtime provider or release is present.**
+System V and related historical Unix filesystem variants. This repository is the designated independent implementation home for InfiltratorOS. **Independent read-only Common V2 development provider. No released installable package yet.**
 
 ## 2. On-disk architecture and invariants
 
-Explicit variant identification and byte order govern superblocks, inode and block trees, free lists and directory records. Geometry or magic shared by several historical variants is insufficient to select a decoder safely. These are design requirements for the native implementation, not claims about code already present in this repository.
+Explicit variant identification and byte order govern superblocks, inode and block trees, free lists and directory records. Geometry or magic shared by several historical variants is insufficient to select a decoder safely. The qualified development profile is narrower than the complete format.
 
 ## 3. Common V2 implementation and capabilities
 
-No local Common V2 implementation or advertised operation set has yet been qualified. The target entry point is `infiltrator_filesystem_api_v2`, using bounded, partition-relative host I/O. Implement native probe first, then mount, stat, enumeration, read and volume query where applicable. Consumers must negotiate supported groups and profiles; an unsupported operation must not report success or delegate to a private driver.
+The local implementation exports only `infiltrator_filesystem_api_v2`. CORE provides probe, mount, unmount, stat, enumeration and read; VOLUME and METADATA are negotiated from the descriptor. Hosted and import-free AMD64 firmware builds share the native engine. Clean Release 2 and Release 4, both byte orders and 512/1024/2048-byte filesystem blocks. Direct and single/double/triple indirect addressing, explicit sparse files, nested directories, links and free-list validation. Byte-authored tests passed; third-party historical media and signed firmware boot remain unqualified.
 
 ## 4. Integrity, mutation, allocation and recovery
 
@@ -18,11 +18,11 @@ Mutation, formatting, check/repair and DEFRAG map/plan/execute/verify/recover re
 
 ## 5. Build, installation and release
 
-The target installation is `/System/Filesystems/SYSV.so` and `/System/Resources/Documentation/Filesystem-SysV.pdf`. Neither file is currently distributed by this repository. Once the implementation qualifies, the intended release is a portable amd64 DEB and CPU-native source-first RUN, with GitHub's automatic source archive. No install or build command is advertised before an executable build exists.
+The target installation is `/System/Filesystems/SYSV.so` and `/System/Resources/Documentation/Filesystem-SysV.pdf`. Neither file is currently distributed as a release. For development, check out the pinned Libraries revision shown in CI, then run `make carrier` (or the exact CI build steps for UDF). The intended release remains a portable amd64 DEB and CPU-native source-first RUN, with GitHub's automatic source archive.
 
 ## 6. Qualification and limitations
 
-Independent images for every admitted variant, ambiguous geometry, corrupt free lists and malformed directory records. Compare independent payloads and unchanged-image hashes; inject truncation, corruption and I/O faults. Establish exact-revision ABI, hosted and import-free freestanding qualification, then independently test BOOT and kernel integration. No local build, runtime or packaging qualification is claimed.
+Exact tested source [6729ade16d57](https://github.com/Infiltrator-Projects/Filesystem-SysV/commit/6729ade16d578216f575c3d6d014439d8e63bd02); [passing provider CI 45954373659](https://github.com/Infiltrator-Projects/Filesystem-SysV/actions/runs/45954373659). Clean Release 2 and Release 4, both byte orders and 512/1024/2048-byte filesystem blocks. Direct and single/double/triple indirect addressing, explicit sparse files, nested directories, links and free-list validation. Byte-authored tests passed; third-party historical media and signed firmware boot remain unqualified. Formatting, writes, repair, defragmentation and release remain unqualified.
 
 ## 7. Technical references and provenance
 
