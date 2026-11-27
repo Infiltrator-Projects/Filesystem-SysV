@@ -12,6 +12,8 @@ The typical layout is a reserved boot region, superblock, contiguous inode table
 
 System V and Xenix on-disk numeric encoding depends on their platform lineage; the commonly encountered x86 profile is little-endian. Coherent uses little-endian 16-bit words but a 32-bit PDP-style ordering: the higher 16-bit word precedes the lower 16-bit word. Packed 24-bit inode zone addresses require separate decoding rules and must not be read as host integers. Coherent lacks a reliable magic constant; use cross-validated geometry, expected field layout and root directory evidence. Reject ambiguous profiles for writes. V7 also needs independent identification and does not become System V merely because its inode record looks similar.
 
+The imported sysv.h defines Xenix, SysV4, SysV2 and Coherent as separate host interpretations. SYSV_MAGIC_BASE-derived VFS identifiers are not on-media signatures; use the variant detection and byte-order evidence in super.c. Unambiguous profile admission is mandatory before writes.
+
 ## System V Release 4 superblock
 
 Relative offsets in the four-byte-aligned 512-byte layout: first data zone at 0 (16 bits), total zones at 4, free-stack count at 8 (16 bits), fifty 32-bit free-zone entries beginning at 12. Free-inode cache count at 212, one hundred 16-bit inode entries from 216, state bytes from 416, update time at 420, device information from 424, free-zone total at 432, free-inode total at 436, volume and pack names at 440 and 446. State at 500, magic at 504, zone-size type at 508. The clean-state relation uses 0x7C269D38 minus the update time. Apply the relation only to the verified Release 4 profile.
@@ -44,8 +46,14 @@ The classic layouts do not provide a general metadata journal. Creating a file r
 
 Reconstruct every live inode's zone ownership, including indirect nodes and metadata, and compare it with the complete free-stack traversal. Detect invalid addresses, duplicate claims, zones absent from both sets, cycles in free chunks, inode-cache duplication and mismatched link counts. Distinguish bad-block reservations from leaks. Verify root and parent relationships and count all reachable inode references. Test each profile independently with zero-filled sparse data, full fourteen-byte names, direct-to-indirect boundaries, empty and full free stacks, mixed-endian fields and deliberately damaged superblocks. Do not repair ambiguities by assuming a different System V profile.
 
+## Implementation and qualification boundary
+
+The independent provider uses Common V2: https://github.com/Infiltrator-Projects/Libraries/blob/main/docs/FILESYSTEM_COMMON_ABI_V2.md . Negotiate actual operation masks and media profiles. Distinguish unsupported, corrupt, I/O and stale-handle results. Require bounded host I/O, exclusive unmounted ownership and durable flush before mutation. Test Media and Defragmenter consume the same engine, not separate format parsers. Hosted and freestanding binaries, relocation, recovery, BOOT, kernel integration and packages require separate exact-source evidence. Current support belongs to the repository README and qualification records. The intended package paths are /System/Filesystems/ and /System/Resources/Documentation/; the reference is not an installation or release-status claim.
+
 ## Sources and qualification boundary
 
-Independent technical documentation: https://docs.kernel.org/6.8/filesystems/sysv-fs.html . Field-layout and algorithm references: https://github.com/torvalds/linux/tree/v6.12/fs/sysv and include/linux/sysv_fs.h. Seek original Xenix, AT&T and Coherent formatter/checker media for fixture validation. The historic Linux implementation is a useful interoperability oracle but is not a complete specification of every Unix-derived variant. Exact per-variant identification, address packing, free-list chunk alignment and clean-state handling require tests against independent images. Historical implementation documents are appended unchanged; they do not establish a qualified provider.
+Independent technical documentation: https://docs.kernel.org/6.8/filesystems/sysv-fs.html . Field-layout and algorithm references: https://github.com/torvalds/linux/tree/v6.12/fs/sysv and include/linux/sysv_fs.h. Seek original Xenix, AT&T and Coherent formatter/checker media for fixture validation. The historic Linux implementation is a useful interoperability oracle but is not a complete specification of every Unix-derived variant. Exact per-variant identification, address packing, free-list chunk alignment and clean-state handling require tests against independent images. Original implementation evidence does not establish a qualified provider.
 
-The PDF preserves both earlier documents as explicitly historical appendices.
+Test free-list loops, ambiguous superblocks and indirect arithmetic for every admitted profile.
+
+Retained source: https://github.com/Infiltrator-Projects/Filesystems/blob/101026021d9088d80b7f0f472d9061f0e2c688a3/native/filesystems/sysv/linux/sysv.h (blob 0a48b2e7ed).
